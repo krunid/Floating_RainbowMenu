@@ -4,150 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>เมนูลอยตัวแบบสีรุ้ง</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
-
-        .content {
-            padding: 20px;
-            margin-top: 60px;
-        }
-
-        .floating-menu {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .menu-button {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #00ff00, #00ffff, #0000ff, #8000ff);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .menu-button:hover {
-            transform: scale(1.1);
-        }
-
-        .menu-button span {
-            display: block;
-            width: 30px;
-            height: 3px;
-            background-color: white;
-            margin: 6px 0;
-            transition: 0.3s;
-        }
-
-        .menu-button.active .line1 {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .menu-button.active .line2 {
-            opacity: 0;
-        }
-
-        .menu-button.active .line3 {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
-
-        .menu-items {
-            position: absolute;
-            top: 80px;
-            right: 0;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            width: 200px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease, padding 0.3s ease;
-            padding: 0;
-        }
-
-        .menu-items.show {
-            max-height: 300px;
-            padding: 10px 0;
-        }
-
-        .menu-item {
-            padding: 15px 20px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
-            display: flex;
-            align-items: center;
-        }
-
-        .menu-item:hover {
-            background-color: #f5f5f5;
-            transform: translateX(-5px);
-        }
-
-        .menu-item-icon {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            margin-right: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-weight: bold;
-        }
-
-        #item1 .menu-item-icon {
-            background: linear-gradient(45deg, #ff0000, #ff5500);
-        }
-
-        #item2 .menu-item-icon {
-            background: linear-gradient(45deg, #ff8000, #ffbb00);
-        }
-
-        #item3 .menu-item-icon {
-            background: linear-gradient(45deg, #ffff00, #88ff00);
-        }
-
-        #item4 .menu-item-icon {
-            background: linear-gradient(45deg, #00ff00, #00ffaa);
-        }
-
-        #item5 .menu-item-icon {
-            background: linear-gradient(45deg, #00ffff, #0088ff);
-        }
-
-        #item6 .menu-item-icon {
-            background: linear-gradient(45deg, #0000ff, #8000ff);
-        }
-
-        /* Animation for floating effect */
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
-        .floating-menu {
-            animation: float 4s ease-in-out infinite;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="content">
@@ -162,6 +19,320 @@
             <li><strong>บล็อก</strong> - บทความที่น่าสนใจ</li>
             <li><strong>ติดต่อ</strong> - ข้อมูลการติดต่อและแบบฟอร์ม</li>
         </ul>
+
+        <!-- การ์ดหน้าหลัก -->
+        <div id="home-card" class="page-card">
+            <div class="card-header">
+                <span>หน้าหลัก</span>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="card-content">
+                <div class="welcome-container">
+                    <div style="width: 200px; height: 200px; border-radius: 10px; background: linear-gradient(45deg, #ff0000, #ff5500); display: flex; justify-content: center; align-items: center; color: white; font-size: 2em; margin: 0 auto;">ยินดีต้อนรับ</div>
+                    <p style="font-size: 1.2em; margin-top: 20px;">ยินดีต้อนรับสู่เว็บไซต์ของเรา ที่นี่คุณจะได้พบกับผลิตภัณฑ์และบริการคุณภาพสูง</p>
+                </div>
+                
+                <div class="welcome-grid">
+                    <div class="welcome-item">
+                        <div class="welcome-icon" style="background: linear-gradient(45deg, #ff8000, #ffbb00);">บริการ</div>
+                        <p>บริการคุณภาพสูง</p>
+                    </div>
+                    <div class="welcome-item">
+                        <div class="welcome-icon" style="background: linear-gradient(45deg, #ffff00, #88ff00);">สินค้า</div>
+                        <p>สินค้าหลากหลาย</p>
+                    </div>
+                    <div class="welcome-item">
+                        <div class="welcome-icon" style="background: linear-gradient(45deg, #0000ff, #8000ff);">ติดต่อ</div>
+                        <p>ติดต่อเรา</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- การ์ดบริการ -->
+        <div id="services-card" class="page-card">
+            <div class="card-header">
+                <span>บริการของเรา</span>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="card-content">
+                <p style="text-align: center; margin-bottom: 30px;">เรามีบริการที่หลากหลายเพื่อตอบสนองความต้องการของลูกค้าทุกท่าน</p>
+                
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h3 style="color: #ff8000;">บริการให้คำปรึกษา</h3>
+                        <p>ให้คำปรึกษาโดยผู้เชี่ยวชาญที่มีประสบการณ์มากกว่า 10 ปี ในด้านต่างๆ</p>
+                        <ul>
+                            <li>วิเคราะห์ธุรกิจ</li>
+                            <li>วางแผนกลยุทธ์</li>
+                            <li>พัฒนาองค์กร</li>
+                        </ul>
+                    </div>
+                    <div class="service-item">
+                        <h3 style="color: #ff8000;">พัฒนาซอฟต์แวร์</h3>
+                        <p>ออกแบบและพัฒนาซอฟต์แวร์ตามความต้องการของลูกค้า</p>
+                        <ul>
+                            <li>พัฒนาเว็บไซต์</li>
+                            <li>พัฒนาแอปพลิเคชัน</li>
+                            <li>ระบบจัดการข้อมูล</li>
+                        </ul>
+                    </div>
+                    <div class="service-item">
+                        <h3 style="color: #ff8000;">การตลาดดิจิทัล</h3>
+                        <p>บริการด้านการตลาดดิจิทัลครบวงจร</p>
+                        <ul>
+                            <li>SEO และ SEM</li>
+                            <li>การตลาดผ่านสื่อสังคมออนไลน์</li>
+                            <li>การวิเคราะห์ข้อมูลการตลาด</li>
+                        </ul>
+                    </div>
+                    <div class="service-item">
+                        <h3 style="color: #ff8000;">ฝึกอบรม</h3>
+                        <p>หลักสูตรฝึกอบรมที่ออกแบบตามความต้องการ</p>
+                        <ul>
+                            <li>อบรมการใช้งานซอฟต์แวร์</li>
+                            <li>พัฒนาทักษะทางเทคโนโลยี</li>
+                            <li>หลักสูตรการจัดการธุรกิจ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- การ์ดสินค้า -->
+        <div id="products-card" class="page-card">
+            <div class="card-header">
+                <span>สินค้าของเรา</span>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="card-content">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <div style="padding: 10px 20px; background-color: #f8fff0; border-radius: 30px; display: inline-block;">
+                        <span style="margin: 0 10px; cursor: pointer; font-weight: bold; color: #88ff00;">ทั้งหมด</span>
+                        <span style="margin: 0 10px; cursor: pointer;">อุปกรณ์</span>
+                        <span style="margin: 0 10px; cursor: pointer;">ซอฟต์แวร์</span>
+                        <span style="margin: 0 10px; cursor: pointer;">อื่นๆ</span>
+                    </div>
+                </div>
+                
+                <div class="product-grid">
+                    <div class="product-item">
+                        <div class="product-image" style="background: linear-gradient(45deg, #ffff00, #88ff00);">สินค้า 1</div>
+                        <div class="product-info">
+                            <h3>อุปกรณ์ A</h3>
+                            <p style="color: #888;">฿1,500</p>
+                            <p>อุปกรณ์คุณภาพสูง ใช้งานง่าย</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-image" style="background: linear-gradient(45deg, #ffff00, #88ff00);">สินค้า 2</div>
+                        <div class="product-info">
+                            <h3>อุปกรณ์ B</h3>
+                            <p style="color: #888;">฿2,200</p>
+                            <p>ประสิทธิภาพสูง ทนทาน</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-image" style="background: linear-gradient(45deg, #ffff00, #88ff00);">สินค้า 3</div>
+                        <div class="product-info">
+                            <h3>ซอฟต์แวร์ X</h3>
+                            <p style="color: #888;">฿3,500</p>
+                            <p>ใช้งานง่าย มีฟีเจอร์ครบครัน</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-image" style="background: linear-gradient(45deg, #ffff00, #88ff00);">สินค้า 4</div>
+                        <div class="product-info">
+                            <h3>ซอฟต์แวร์ Y</h3>
+                            <p style="color: #888;">฿4,200</p>
+                            <p>ประสิทธิภาพสูง รองรับหลายแพลตฟอร์ม</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- การ์ดเกี่ยวกับเรา -->
+        <div id="about-card" class="page-card">
+            <div class="card-header">
+                <span>เกี่ยวกับเรา</span>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="card-content">
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <div style="width: 150px; height: 150px; border-radius: 50%; background: linear-gradient(45deg, #00ff00, #00ffaa); display: flex; justify-content: center; align-items: center; color: white; font-size: 3em; margin: 0 auto;">Logo</div>
+                </div>
+                
+                <p style="line-height: 1.6; text-align: justify;">
+                    บริษัทของเราก่อตั้งขึ้นในปี 2023 ด้วยความมุ่งมั่นที่จะสร้างสรรค์นวัตกรรมใหม่ๆ เพื่อตอบสนองความต้องการของลูกค้า 
+                    เรามีทีมงานมืออาชีพที่มีประสบการณ์และความเชี่ยวชาญในหลากหลายด้าน พร้อมที่จะให้บริการอย่างเต็มที่
+                </p>
+                
+                <h2 style="color: #00cc88; margin-top: 30px;">วิสัยทัศน์ของเรา</h2>
+                <p style="line-height: 1.6; text-align: justify;">
+                    เรามุ่งมั่นที่จะเป็นผู้นำในอุตสาหกรรมและสร้างผลกระทบเชิงบวกต่อสังคม ด้วยการพัฒนาผลิตภัณฑ์และบริการที่เป็นมิตรกับสิ่งแวดล้อม
+                    และตอบสนองความต้องการของลูกค้าได้อย่างมีประสิทธิภาพ
+                </p>
+                
+                <h2 style="color: #00cc88; margin-top: 30px;">ทีมงานของเรา</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-avatar" style="background: linear-gradient(45deg, #00ffaa, #00ff88);"></div>
+                        <h3>สมชาย ใจดี</h3>
+                        <p>ผู้ก่อตั้ง & CEO</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-avatar" style="background: linear-gradient(45deg, #00ffcc, #00ddff);"></div>
+                        <h3>สมหญิง รักดี</h3>
+                        <p>ผู้อำนวยการฝ่ายการตลาด</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-avatar" style="background: linear-gradient(45deg, #00ccff, #0088ff);"></div>
+                        <h3>สมศักดิ์ มั่นคง</h3>
+                        <p>หัวหน้าฝ่ายเทคโนโลยี</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- การ์ดบล็อก -->
+        <div id="blog-card" class="page-card">
+            <div class="card-header">
+                <span>บล็อก</span>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="card-content">
+                <div class="blog-post">
+                    <h2 style="color: #0088ff;">เทรนด์เทคโนโลยีล่าสุดที่ธุรกิจควรรู้</h2>
+                    <p style="color: #888; margin: 5px 0;">โพสต์เมื่อ: 20 มีนาคม 2025</p>
+                    <div class="blog-image" style="background: linear-gradient(45deg, #00ffff, #0088ff);"></div>
+                    <p style="line-height: 1.6;">
+                        ในยุคดิจิทัลที่เทคโนโลยีมีการเปลี่ยนแปลงอย่างรวดเร็ว ธุรกิจต่างๆ จำเป็นต้องปรับตัวและติดตามเทรนด์ใหม่ๆ อยู่เสมอ
+                        บทความนี้จะกล่าวถึงเทคโนโลยีล่าสุดที่มีผลกระทบต่อธุรกิจในปัจจุบัน...
+                    </p>
+                    <a href="#" style="color: #0088ff; text-decoration: none; font-weight: bold;">อ่านต่อ</a>
+                </div>
+                
+                <div class="blog-post">
+                    <h2 style="color: #0088ff;">กลยุทธ์การตลาดออนไลน์ที่ได้ผลในปี 2025</h2>
+                    <p style="color: #888; margin: 5px 0;">โพสต์เมื่อ: 5 มีนาคม 2025</p>
+                    <div class="blog-image" style="background: linear-gradient(45deg, #00ffff, #0088ff);"></div>
+                    <p style="line-height: 1.6;">
+                        การตลาดออนไลน์มีการเปลี่ยนแปลงอย่างต่อเนื่อง การปรับกลยุทธ์ให้ทันสมัยจึงเป็นสิ่งสำคัญ
+                        บทความนี้จะแนะนำกลยุทธ์การตลาดออนไลน์ที่ได้ผลดีที่สุดในปี 2025...
+                    </p>
+                    <a href="#" style="color: #0088ff; text-decoration: none; font-weight: bold;">อ่านต่อ</a>
+                </div>
+                
+                <div class="blog-post">
+                    <h2 style="color: #0088ff;">วิธีปรับปรุงประสิทธิภาพเว็บไซต์ให้โหลดเร็วขึ้น</h2>
+                    <p style="color: #888; margin: 5px 0;">โพสต์เมื่อ: 15 กุมภาพันธ์ 2025</p>
+                    <div class="blog-image" style="background: linear-gradient(45deg, #00ffff, #0088ff);"></div>
+                    <p style="line-height: 1.6;">
+                        ความเร็วในการโหลดเว็บไซต์เป็นปัจจัยสำคัญที่ส่งผลต่อประสบการณ์ของผู้ใช้งาน บทความนี้จะแนะนำเทคนิคต่างๆ 
+                        ในการปรับปรุงประสิทธิภาพเว็บไซต์ให้โหลดเร็วขึ้น...
+                    </p>
+                    <a href="#" style="color: #0088ff; text-decoration: none; font-weight: bold;">อ่านต่อ</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- การ์ดติดต่อ -->
+        <div id="contact-card" class="page-card">
+            <div class="card-header">
+                <span>ติดต่อเรา</span>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="card-content">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2 style="color: #8000ff; margin-bottom: 20px;">ข้อมูลติดต่อ</h2>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <h3 style="color: #8000ff; margin-bottom: 10px;">ที่อยู่</h3>
+                            <p style="line-height: 1.6;">
+                                123 ถนนสุขุมวิท<br>
+                                แขวงคลองเตย เขตคลองเตย<br>
+                                กรุงเทพมหานคร 10110
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <h3 style="color: #8000ff; margin-bottom: 10px;">อีเมล</h3>
+                            <p style="line-height: 1.6;">
+                                info@example.com<br>
+                                support@example.com
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <h3 style="color: #8000ff; margin-bottom: 10px;">โทรศัพท์</h3>
+                            <p style="line-height: 1.6;">
+                                +66 2 123 4567<br>
+                                +66 81 234 5678
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: #8000ff; margin-bottom: 10px;">เวลาทำการ</h3>
+                            <p style="line-height: 1.6;">
+                                จันทร์ - ศุกร์: 9:00 - 18:00<br>
+                                เสาร์: 10:00 - 15:00<br>
+                                อาทิตย์: ปิดทำการ
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h2 style="color: #8000ff; margin-bottom: 20px;">แบบฟอร์มติดต่อ</h2>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: bold;">ชื่อ - นามสกุล *</label>
+                            <input type="text" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 1em;">
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: bold;">อีเมล *</label>
+                            <input type="email" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 1em;">
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: bold;">เบอร์โทรศัพท์</label>
+                            <input type="tel" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 1em;">
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: bold;">หัวข้อ *</label>
+                            <select style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 1em;">
+                                <option value="">กรุณาเลือกหัวข้อ</option>
+                                <option value="general">สอบถามข้อมูลทั่วไป</option>
+                                <option value="service">บริการ</option>
+                                <option value="product">สินค้า</option>
+                                <option value="support">ขอความช่วยเหลือ</option>
+                                <option value="other">อื่นๆ</option>
+                            </select>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: bold;">ข้อความ *</label>
+                            <textarea style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 1em; min-height: 120px;"></textarea>
+                        </div>
+                        
+                        <button style="display: block; width: 100%; padding: 12px; background: linear-gradient(45deg, #0000ff, #8000ff); color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em; font-weight: bold;">ส่งข้อความ</button>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; background-color: #f5f0ff; padding: 20px; border-radius: 10px; text-align: center;">
+                    <h2 style="color: #8000ff; margin-bottom: 15px;">ติดตามเรา</h2>
+                    <div class="social-icons">
+                        <div class="social-icon">F</div>
+                        <div class="social-icon">T</div>
+                        <div class="social-icon">IG</div>
+                        <div class="social-icon">YT</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="floating-menu">
@@ -200,375 +371,6 @@
         </div>
     </div>
 
-    <!-- หน้าหลัก -->
-    <div id="home-page" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: white; z-index: 2000; padding: 20px; overflow-y: auto;">
-        <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
-            <h1 style="background: linear-gradient(45deg, #ff0000, #ff5500); -webkit-background-clip: text; background-clip: text; color: transparent; text-align: center; padding: 10px 0;">หน้าหลัก</h1>
-            
-            <div style="display: flex; justify-content: center; margin: 30px 0;">
-                <div style="width: 200px; height: 200px; border-radius: 10px; background: linear-gradient(45deg, #ff0000, #ff5500); display: flex; justify-content: center; align-items: center; color: white; font-size: 2em;">ยินดีต้อนรับ</div>
-            </div>
-            
-            <p style="font-size: 1.2em; line-height: 1.6; text-align: center;">
-                ยินดีต้อนรับสู่เว็บไซต์ของเรา ที่นี่คุณจะได้พบกับผลิตภัณฑ์และบริการคุณภาพสูง
-            </p>
-            
-            <div style="display: flex; flex-wrap: wrap; justify-content: space-around; margin: 40px 0;">
-                <div style="text-align: center; width: 200px; margin-bottom: 30px;">
-                    <div style="width: 120px; height: 120px; border-radius: 10px; background: linear-gradient(45deg, #ff8000, #ffbb00); margin: 0 auto; display: flex; justify-content: center; align-items: center; color: white; font-size: 1.5em;">บริการ</div>
-                    <p style="margin-top: 10px;">บริการคุณภาพสูง</p>
-                </div>
-                <div style="text-align: center; width: 200px; margin-bottom: 30px;">
-                    <div style="width: 120px; height: 120px; border-radius: 10px; background: linear-gradient(45deg, #ffff00, #88ff00); margin: 0 auto; display: flex; justify-content: center; align-items: center; color: white; font-size: 1.5em;">สินค้า</div>
-                    <p style="margin-top: 10px;">สินค้าหลากหลาย</p>
-                </div>
-                <div style="text-align: center; width: 200px; margin-bottom: 30px;">
-                    <div style="width: 120px; height: 120px; border-radius: 10px; background: linear-gradient(45deg, #0000ff, #8000ff); margin: 0 auto; display: flex; justify-content: center; align-items: center; color: white; font-size: 1.5em;">ติดต่อ</div>
-                    <p style="margin-top: 10px;">ติดต่อเรา</p>
-                </div>
-            </div>
-            
-            <button class="close-page" style="display: block; margin: 30px auto; padding: 10px 20px; background: linear-gradient(45deg, #ff0000, #ff5500); color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em;">ปิดหน้านี้</button>
-        </div>
-    </div>
-
-    <!-- หน้าบริการ -->
-    <div id="services-page" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: white; z-index: 2000; padding: 20px; overflow-y: auto;">
-        <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
-            <h1 style="background: linear-gradient(45deg, #ff8000, #ffbb00); -webkit-background-clip: text; background-clip: text; color: transparent; text-align: center; padding: 10px 0;">บริการของเรา</h1>
-            
-            <p style="font-size: 1.1em; line-height: 1.6; text-align: center; margin: 20px 0;">
-                เรามีบริการที่หลากหลายเพื่อตอบสนองความต้องการของลูกค้าทุกท่าน
-            </p>
-            
-            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin: 30px 0;">
-                <div style="width: 48%; background-color: #fff9f0; padding: 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                    <h3 style="color: #ff8000;">บริการให้คำปรึกษา</h3>
-                    <p>ให้คำปรึกษาโดยผู้เชี่ยวชาญที่มีประสบการณ์มากกว่า 10 ปี ในด้านต่างๆ</p>
-                    <ul style="margin-left: 20px; margin-top: 10px;">
-                        <li>วิเคราะห์ธุรกิจ</li>
-                        <li>วางแผนกลยุทธ์</li>
-                        <li>พัฒนาองค์กร</li>
-                    </ul>
-                </div>
-                <div style="width: 48%; background-color: #fff9f0; padding: 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                    <h3 style="color: #ff8000;">พัฒนาซอฟต์แวร์</h3>
-                    <p>ออกแบบและพัฒนาซอฟต์แวร์ตามความต้องการของลูกค้า</p>
-                    <ul style="margin-left: 20px; margin-top: 10px;">
-                        <li>พัฒนาเว็บไซต์</li>
-                        <li>พัฒนาแอปพลิเคชัน</li>
-                        <li>ระบบจัดการข้อมูล</li>
-                    </ul>
-                </div>
-                <div style="width: 48%; background-color: #fff9f0; padding: 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                    <h3 style="color: #ff8000;">การตลาดดิจิทัล</h3>
-                    <p>บริการด้านการตลาดดิจิทัลครบวงจร</p>
-                    <ul style="margin-left: 20px; margin-top: 10px;">
-                        <li>SEO และ SEM</li>
-                        <li>การตลาดผ่านสื่อสังคมออนไลน์</li>
-                        <li>การวิเคราะห์ข้อมูลการตลาด</li>
-                    </ul>
-                </div>
-                <div style="width: 48%; background-color: #fff9f0; padding: 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                    <h3 style="color: #ff8000;">ฝึกอบรม</h3>
-                    <p>หลักสูตรฝึกอบรมที่ออกแบบตามความต้องการ</p>
-                    <ul style="margin-left: 20px; margin-top: 10px;">
-                        <li>อบรมการใช้งานซอฟต์แวร์</li>
-                        <li>พัฒนาทักษะทางเทคโนโลยี</li>
-                        <li>หลักสูตรการจัดการธุรกิจ</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <button class="close-page" style="display: block; margin: 30px auto; padding: 10px 20px; background: linear-gradient(45deg, #ff8000, #ffbb00); color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em;">ปิดหน้านี้</button>
-        </div>
-    </div>
-
-    <!-- หน้าสินค้า -->
-    <div id="products-page" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: white; z-index: 2000; padding: 20px; overflow-y: auto;">
-        <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
-            <h1 style="background: linear-gradient(45deg, #ffff00, #88ff00); -webkit-background-clip: text; background-clip: text; color: transparent; text-align: center; padding: 10px 0;">สินค้าของเรา</h1>
-            
-            <div style="display: flex; justify-content: center; margin-bottom: 30px;">
-                <div style="padding: 10px 20px; background-color: #f8fff0; border-radius: 30px; display: inline-block;">
-                    <span style="margin: 0 10px; cursor: pointer; font-weight: bold; color: #88ff00;">ทั้งหมด</span>
-                    <span style="margin: 0 10px; cursor: pointer;">อุปกรณ์</span>
-                    <span style="margin: 0 10px; cursor: pointer;">ซอฟต์แวร์</span>
-                    <span style="margin: 0 10px; cursor: pointer;">อื่นๆ</span>
-                </div>
-            </div>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; margin: 20px 0;">
-                <div style="border: 1px solid #eee; border-radius: 10px; overflow: hidden; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                    <div style="height: 150px; background: linear-gradient(45deg, #ffff00, #88ff00); display: flex; justify-content: center; align-items: center; color: white; font-size: 1.2em;">สินค้า 1</div>
-                    <div style="padding: 15px;">
-                        <h3>อุปกรณ์ A</h3>
-                        <p style="color: #888;">฿1,500</p>
-                        <p>อุปกรณ์คุณภาพสูง ใช้งานง่าย</p>
-                    </div>
-                </div>
-                <div style="border: 1px solid #eee; border-radius: 10px; overflow: hidden; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                    <div style="height: 150px; background: linear-gradient(45deg, #ffff00, #88ff00); display: flex; justify-content: center; align-items: center; color: white; font-size: 1.2em;">สินค้า 2</div>
-                    <div style="padding: 15px;">
-                        <h3>อุปกรณ์ B</h3>
-                        <p style="color: #888;">฿2,200</p>
-                        <p>ประสิทธิภาพสูง ทนทาน</p>
-                    </div>
-                </div>
-                <div style="border: 1px solid #eee; border-radius: 10px; overflow: hidden; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                    <div style="height: 150px; background: linear-gradient(45deg, #ffff00, #88ff00); display: flex; justify-content: center; align-items: center; color: white; font-size: 1.2em;">สินค้า 3</div>
-                    <div style="padding: 15px;">
-                        <h3>ซอฟต์แวร์ X</h3>
-                        <p style="color: #888;">฿3,500</p>
-                        <p>ใช้งานง่าย มีฟีเจอร์ครบครัน</p>
-                    </div>
-                </div>
-                <div style="border: 1px solid #eee; border-radius: 10px; overflow: hidden; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                    <div style="height: 150px; background: linear-gradient(45deg, #ffff00, #88ff00); display: flex; justify-content: center; align-items: center; color: white; font-size: 1.2em;">สินค้า 4</div>
-                    <div style="padding: 15px;">
-                        <h3>ซอฟต์แวร์ Y</h3>
-                        <p style="color: #888;">฿4,200</p>
-                        <p>ประสิทธิภาพสูง รองรับหลายแพลตฟอร์ม</p>
-                    </div>
-                </div>
-            </div>
-            
-            <button class="close-page" style="display: block; margin: 30px auto; padding: 10px 20px; background: linear-gradient(45deg, #ffff00, #88ff00); color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em;">ปิดหน้านี้</button>
-        </div>
-    </div>
-
-    <!-- หน้าเกี่ยวกับเรา -->
-    <div id="about-page" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: white; z-index: 2000; padding: 20px; overflow-y: auto;">
-        <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
-            <h1 style="background: linear-gradient(45deg, #00ff00, #00ffaa); -webkit-background-clip: text; background-clip: text; color: transparent; text-align: center; padding: 10px 0;">เกี่ยวกับเรา</h1>
-            
-            <div style="display: flex; justify-content: center; margin: 20px 0;">
-                <div style="width: 150px; height: 150px; border-radius: 50%; background: linear-gradient(45deg, #00ff00, #00ffaa); display: flex; justify-content: center; align-items: center; color: white; font-size: 3em;">Logo</div>
-            </div>
-            
-            <p style="font-size: 1.1em; line-height: 1.6; text-align: justify;">
-                บริษัทของเราก่อตั้งขึ้นในปี 2023 ด้วยความมุ่งมั่นที่จะสร้างสรรค์นวัตกรรมใหม่ๆ เพื่อตอบสนองความต้องการของลูกค้า 
-                เรามีทีมงานมืออาชีพที่มีประสบการณ์และความเชี่ยวชาญในหลากหลายด้าน พร้อมที่จะให้บริการอย่างเต็มที่
-            </p>
-            
-            <h2 style="color: #00cc88; margin-top: 30px;">วิสัยทัศน์ของเรา</h2>
-            <p style="line-height: 1.6; text-align: justify;">
-                เรามุ่งมั่นที่จะเป็นผู้นำในอุตสาหกรรมและสร้างผลกระทบเชิงบวกต่อสังคม ด้วยการพัฒนาผลิตภัณฑ์และบริการที่เป็นมิตรกับสิ่งแวดล้อม
-                และตอบสนองความต้องการของลูกค้าได้อย่างมีประสิทธิภาพ
-            </p>
-            
-            <h2 style="color: #00cc88; margin-top: 30px;">ทีมงานของเรา</h2>
-            <div style="display: flex; flex-wrap: wrap; justify-content: space-around; margin: 20px 0;">
-                <div style="text-align: center; margin: 10px;">
-                    <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(45deg, #00ffaa, #00ff88); margin: 0 auto;"></div>
-                    <h3>สมชาย ใจดี</h3>
-                    <p>ผู้ก่อตั้ง & CEO</p>
-                </div>
-                <div style="text-align: center; margin: 10px;">
-                    <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(45deg, #00ffcc, #00ddff); margin: 0 auto;"></div>
-                    <h3>สมหญิง รักดี</h3>
-                    <p>ผู้อำนวยการฝ่ายการตลาด</p>
-                </div>
-                <div style="text-align: center; margin: 10px;">
-                    <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(45deg, #00ccff, #0088ff); margin: 0 auto;"></div>
-                    <h3>สมศักดิ์ มั่นคง</h3>
-                    <p>หัวหน้าฝ่ายเทคโนโลยี</p>
-                </div>
-            </div>
-            
-            <button class="close-page" style="display: block; margin: 30px auto; padding: 10px 20px; background: linear-gradient(45deg, #00ff00, #00ffaa); color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em;">ปิดหน้านี้</button>
-        </div>
-    </div>
-
-    <!-- หน้าบล็อก -->
-    <div id="blog-page" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: white; z-index: 2000; padding: 20px; overflow-y: auto;">
-        <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
-            <h1 style="background: linear-gradient(45deg, #00ffff, #0088ff); -webkit-background-clip: text; background-clip: text; color: transparent; text-align: center; padding: 10px 0;">บล็อก</h1>
-            
-            <div style="margin: 30px 0;">
-                <div style="margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
-                    <h2 style="color: #0088ff;">เทรนด์เทคโนโลยีล่าสุดที่ธุรกิจควรรู้</h2>
-                    <p style="color: #888; margin: 5px 0;">โพสต์เมื่อ: 20 มีนาคม 2025</p>
-                    <div style="height: 200px; background: linear-gradient(45deg, #00ffff, #0088ff); margin: 15px 0; border-radius: 10px;"></div>
-                    <p style="line-height: 1.6;">
-                        ในยุคดิจิทัลที่เทคโนโลยีมีการเปลี่ยนแปลงอย่างรวดเร็ว ธุรกิจต่างๆ จำเป็นต้องปรับตัวและติดตามเทรนด์ใหม่ๆ อยู่เสมอ
-                        บทความนี้จะกล่าวถึงเทคโนโลยีล่าสุดที่มีผลกระทบต่อธุรกิจในปัจจุบัน...
-                    </p>
-                    <a href="#" style="color: #0088ff; text-decoration: none; font-weight: bold;">อ่านต่อ</a>
-                </div>
-                
-                <div style="margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
-                    <h2 style="color: #0088ff;">วิธีปรับปรุงประสิทธิภาพเว็บไซต์ให้โหลดเร็วขึ้น</h2>
-                    <p style="color: #888; margin: 5px 0;">โพสต์เมื่อ: 15 กุมภาพันธ์ 2025</p>
-                    <div style="height: 200px; background: linear-gradient(45deg, #00ffff, #0088ff); margin: 15px 0; border-radius: 10px;"></div>
-                    <p style="line-height: 1.6;">
-                        ความเร็วในการโหลดเว็บไซต์เป็นปัจจัยสำคัญที่ส่งผลต่อประสบการณ์ของผู้ใช้งาน บทความนี้จะแนะนำเทคนิคต่างๆ 
-                        ในการปรับปรุงประสิทธิภาพเว็บไซต์ให้โหลดเร็วขึ้น...
-                    </p>
-                    <a href="#" style="color: #0088ff; text-decoration: none; font-weight: bold;">อ่านต่อ</a>
-                </div>
-            </div>
-            
-            <button class="close-page" style="display: block; margin: 30px auto; padding: 10px 20px; background: linear-gradient(45deg, #00ffff, #0088ff); color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em;">ปิดหน้านี้</button>
-        </div>
-    </div>
-
-    <!-- หน้าติดต่อ -->
-    <div id="contact-page" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: white; z-index: 2000; padding: 20px; overflow-y: auto;">
-        <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
-            <h1 style="background: linear-gradient(45deg, #0000ff, #8000ff); -webkit-background-clip: text; background-clip: text; color: transparent; text-align: center; padding: 10px 0;">ติดต่อเรา</h1>
-            
-            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin: 40px 0;">
-                <div style="width: 48%; background-color: #f5f0ff; padding: 30px; border-radius: 10px; margin-bottom: 20px;">
-                    <h2 style="color: #8000ff; margin-bottom: 20px;">ข้อมูลติดต่อ</h2>
-                    
-                    <div style="margin-bottom: 20px;">
-                        <h3 style="color: #8000ff; margin-bottom: 10px;">ที่อยู่</h3>
-                        <p style="line-height: 1.6;">
-                            123 ถนนสุขุมวิท<br>
-                            แขวงคลองเตย เขตคลองเตย<br>
-                            กรุงเทพมหานคร 10110
-                        </p>
-                    </div>
-                    
-                    <div style="margin-bottom: 20px;">
-                        <h3 style="color: #8000ff; margin-bottom: 10px;">อีเมล</h3>
-                        <p style="line-height: 1.6;">
-                            info@example.com<br>
-                            support@example.com
-                        </p>
-                    </div>
-                    
-                    <div style="margin-bottom: 20px;">
-                        <h3 style="color: #8000ff; margin-bottom: 10px;">โทรศัพท์</h3>
-                        <p style="line-height: 1.6;">
-                            +66 2 123 4567<br>
-                            +66 81 234 5678
-                        </p>
-                    </div>
-                    
-                    <div>
-                        <h3 style="color: #8000ff; margin-bottom: 10px;">เวลาทำการ</h3>
-                        <p style="line-height: 1.6;">
-                            จันทร์ - ศุกร์: 9:00 - 18:00<br>
-                            เสาร์: 10:00 - 15:00<br>
-                            อาทิตย์: ปิดทำการ
-                        </p>
-                    </div>
-                </div>
-                
-                <div style="width: 48%; background-color: #f5f0ff; padding: 30px; border-radius: 10px; margin-bottom: 20px;">
-                    <h2 style="color: #8000ff; margin-bottom: 20px;">แบบฟอร์มติดต่อ</h2>
-                    
-                    <div style="margin-bottom: 15px;">
-                        <label style="display: block; margin-bottom: 5px; font-weight: bold;">ชื่อ - นามสกุล *</label>
-                        <input type="text" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 1em;">
-                    </div>
-                    
-                    <div style="margin-bottom: 15px;">
-                        <label style="display: block; margin-bottom: 5px; font-weight: bold;">อีเมล *</label>
-                        <input type="email" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 1em;">
-                    </div>
-                    
-                    <div style="margin-bottom: 15px;">
-                        <label style="display: block; margin-bottom: 5px; font-weight: bold;">เบอร์โทรศัพท์</label>
-                        <input type="tel" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 1em;">
-                    </div>
-                    
-                    <div style="margin-bottom: 15px;">
-                        <label style="display: block; margin-bottom: 5px; font-weight: bold;">หัวข้อ *</label>
-                        <select style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 1em;">
-                            <option value="">กรุณาเลือกหัวข้อ</option>
-                            <option value="general">สอบถามข้อมูลทั่วไป</option>
-                            <option value="service">บริการ</option>
-                            <option value="product">สินค้า</option>
-                            <option value="support">ขอความช่วยเหลือ</option>
-                            <option value="other">อื่นๆ</option>
-                        </select>
-                    </div>
-                    
-                    <div style="margin-bottom: 20px;">
-                        <label style="display: block; margin-bottom: 5px; font-weight: bold;">ข้อความ *</label>
-                        <textarea style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 1em; min-height: 120px;"></textarea>
-                    </div>
-                    
-                    <button style="display: block; width: 100%; padding: 12px; background: linear-gradient(45deg, #0000ff, #8000ff); color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em; font-weight: bold;">ส่งข้อความ</button>
-                </div>
-            </div>
-            
-            <div style="margin-top: 30px; background-color: #f5f0ff; padding: 20px; border-radius: 10px;">
-                <h2 style="color: #8000ff; margin-bottom: 15px; text-align: center;">ติดตามเรา</h2>
-                <div style="display: flex; justify-content: center;">
-                    <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(45deg, #0000ff, #8000ff); margin: 0 10px; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold;">F</div>
-                    <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(45deg, #0000ff, #8000ff); margin: 0 10px; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold;">T</div>
-                    <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(45deg, #0000ff, #8000ff); margin: 0 10px; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold;">IG</div>
-                    <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(45deg, #0000ff, #8000ff); margin: 0 10px; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold;">YT</div>
-                </div>
-            </div>
-            
-            <button class="close-page" style="display: block; margin: 30px auto; padding: 10px 20px; background: linear-gradient(45deg, #0000ff, #8000ff); color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em;">ปิดหน้านี้</button>
-        </div>
-    </div>
-
-    <script>
-        // จับการคลิกที่ปุ่มเมนู
-        document.querySelector('.menu-button').addEventListener('click', function() {
-            this.classList.toggle('active');
-            document.querySelector('.menu-items').classList.toggle('show');
-        });
-
-        // ปิดทุกหน้า
-        function closeAllPages() {
-            const pages = document.querySelectorAll('[id$="-page"]');
-            pages.forEach(page => {
-                page.style.display = 'none';
-            });
-        }
-
-        // จับการคลิกที่รายการเมนู
-        document.querySelectorAll('.menu-item').forEach(function(item) {
-            item.addEventListener('click', function() {
-                // ซ่อนเมนู
-                document.querySelector('.menu-button').classList.remove('active');
-                document.querySelector('.menu-items').classList.remove('show');
-                
-                // ปิดทุกหน้าก่อน
-                closeAllPages();
-                
-                // เปิดหน้าตามเมนูที่คลิก
-                if (this.id === 'item1') {
-                    document.getElementById('home-page').style.display = 'block';
-                } else if (this.id === 'item2') {
-                    document.getElementById('services-page').style.display = 'block';
-                } else if (this.id === 'item3') {
-                    document.getElementById('products-page').style.display = 'block';
-                } else if (this.id === 'item4') {
-                    document.getElementById('about-page').style.display = 'block';
-                } else if (this.id === 'item5') {
-                    document.getElementById('blog-page').style.display = 'block';
-                } else if (this.id === 'item6') {
-                    document.getElementById('contact-page').style.display = 'block';
-                }
-            });
-        });
-
-        // ปุ่มปิดหน้า
-        document.querySelectorAll('.close-page').forEach(function(button) {
-            button.addEventListener('click', function() {
-                closeAllPages();
-            });
-        });
-
-        // เมื่อคลิกนอกเมนู ให้ซ่อนเมนู
-        document.addEventListener('click', function(event) {
-            const menu = document.querySelector('.floating-menu');
-            const menuButton = document.querySelector('.menu-button');
-            
-            if (!menu.contains(event.target)) {
-                menuButton.classList.remove('active');
-                document.querySelector('.menu-items').classList.remove('show');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
